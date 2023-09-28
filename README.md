@@ -1,6 +1,6 @@
 # Paratytech challenge
 
-RESTful api that services requests for netflix items. Built using flask and click.
+RESTful api that services requests for netflix items. Built using flask, GCP datastore and click.
 
 ## Quickstart
 
@@ -14,7 +14,7 @@ Go to `http://localhost:8080`. You will see the database filled with data.
 
 Endpoints:
 - '/' -> Read the data and call the "system_module_2" API using http
-- '/load' -> Process to ingest data from the attached file into the sytem (system_module_1)
+- '/load' -> Process to ingest data into the sytem (system_module_1)
 - '/query' -> API to load and visualize the data using a REST API
 
 
@@ -43,14 +43,16 @@ To deploy the application in prod, a new .env file is required containing the in
 
 ## Running Tests
 
-To run all tests, run
+To run all tests:
 
 ```bash
 python -m pytest 
 ```
 
+Remember to keep the application main server running in order to get the test responses correctly.
+
 ## Important Notes:
 - The app is using threading module to achieve concurrency, however, another options could be considered depending on the requirements, like celery.
-- The app is using application factory to reach modularization and scalability.
-- Could be a good idea to handle user sessions to improve concurrency, but time restrictions avoid the implementation.
-- Due to time limit cuota of the free GCP respurces, containers with docker were not implemented that could be the best option to deploy to QA and other stages.
+- The app is using application factory to reach modularization, scalability and maintainability.
+- Could be a good idea to handle user sessions to improve concurrency, but time restrictions avoided the implementation.
+- Due to limited quota of the free GCP resources, containers with docker were not implemented that could be the best option to deliver to QA and other stages.
