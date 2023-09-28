@@ -1,9 +1,9 @@
 """
-Routes definition: Created 2 endpooints for load and query data, and base url for data serialization.
+Routes definition: Created 2 endpoints for load and query data, and base url for data serialization.
 """
 
 from flask import Blueprint, jsonify, request, current_app, render_template, redirect
-import csv, os
+import csv
 import requests
 from google.cloud import datastore
 from config import HOST, PORT
