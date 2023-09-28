@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Query results</title>
+</head>
+<body>
+    <h1>Netflix titles</h1>
+    <ul>
+        {% for movie in movies %}
+        <li>
+            <h2>Title: {{ movie.title }}</h2>
+            <p>Id: {{ movie.show_id }}</p>
+            <p>type: {{ movie.type }}</p>
+            <p>director: {{ movie.director }}</p>
+            <p>cast: {{ movie.cast }}</p>
+            <p>country: {{ movie.country }}</p>
+            <p>date_added: {{ movie.date_added }}</p>
+            <p>rating: {{ movie.rating }}</p>
+            <p>duration: {{ movie.duration }}</p>
+            <p>listed_in: {{ movie.listed_in }}</p>
+            <p>release_year: {{ movie.release_year }}</p>
+            <p>Description: {{ movie.description }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
